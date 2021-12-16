@@ -9,12 +9,14 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
     private EditText text;
+    private EditText output;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         text = (EditText) findViewById(R.id.inputValue);
+        output = (EditText) findViewById(R.id.inputValue2);
 
     }
 
@@ -23,8 +25,8 @@ public class MainActivity extends Activity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button1:
-                RadioButton celsiusButton = (RadioButton) findViewById(R.id.radio0);
-                RadioButton fahrenheitButton = (RadioButton) findViewById(R.id.radio1);
+                RadioButton kilosButton = (RadioButton) findViewById(R.id.radio0);
+                RadioButton poundsButton = (RadioButton) findViewById(R.id.radio1);
                 if (text.getText().length() == 0) {
                     Toast.makeText(this, "Please enter a valid number",
                             Toast.LENGTH_LONG).show();
@@ -32,16 +34,16 @@ public class MainActivity extends Activity {
                 }
 
                 float inputValue = Float.parseFloat(text.getText().toString());
-                if (celsiusButton.isChecked()) {
-                    text.setText(String
-                            .valueOf(ConverterUtil.convertFahrenheitToCelsius(inputValue)));
-                    celsiusButton.setChecked(false);
-                    fahrenheitButton.setChecked(true);
+                if (kilosButton.isChecked()) {
+                    output.setText(String
+                            .valueOf(ConverterUtil.convertkilosTopound(inputValue)));
+//                    kilosButton.setChecked(false);
+//                    poundsButton.setChecked(true);
                 } else {
-                    text.setText(String
-                            .valueOf(ConverterUtil.convertCelsiusToFahrenheit(inputValue)));
-                    fahrenheitButton.setChecked(false);
-                    celsiusButton.setChecked(true);
+                    output.setText(String
+                            .valueOf(ConverterUtil.convertPoundToCKilos(inputValue)));
+//                    poundsButton.setChecked(false);
+//                    kilosButton.setChecked(true);
                 }
                 break;
         }

@@ -2,12 +2,12 @@ package com.example.temp_conv;
 
 public class ConverterUtil {
     // converts to celsius
-    public static float convertFahrenheitToCelsius(float fahrenheit) {
-        return ((fahrenheit - 32) * 5 / 9);
+    public static double convertPoundToCKilos(float pound) {
+        return (pound / 2.205);
     }
 
     // converts to fahrenheit
-    public static float convertCelsiusToFahrenheit(float celsius) {
-        return ((celsius * 9) / 5) + 32;
+    public static double convertkilosTopound(float kilos) {
+        return (kilos * 2.205);
     }
 }

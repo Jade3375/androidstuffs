@@ -24,13 +24,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="@string/celsius" />
+            android:text="@string/kilos" />
 
         <RadioButton
             android:id="@+id/radio1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fahrenheit" />
+            android:text="@string/pounds" />
     </RadioGroup>
 
     <Button
@@ -42,5 +42,11 @@
         android:layout_marginTop="22dp"
         android:text="@string/calc"
         android:onClick="onClick"/>
+
+    <EditText
+        android:id="@+id/inputValue2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal" />
 
 </LinearLayout>
